@@ -1,26 +1,20 @@
+// 1. Always import react
 import React from 'react';
+// const react = require('react');
 import logo from './logo.svg';
 import './App.css';
+import Greet from './Greet';
 
+// 2. Always define a function (or a class)
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello, React!</h1>
+      <Greet whom='Alice'/>
     </div>
   );
 }
 
+// 3. Always export the App
 export default App;
+// module.exports = App;
