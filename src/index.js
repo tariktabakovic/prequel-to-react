@@ -3,27 +3,61 @@
 
 // #1 accepts arguments, instead of using global variables.
 function greet({name, address}){
-    // const {name} = whom;
 
     // #2 always return a value.
     return `Hello, ${name}!, of ${address}`;
 };
 // console.log(greet('Greta'));
-const person = {
-    name: 'Greta',
-    // address: 'Earth',
-    occupation: 'Hero'
-};
+// const person = {
+//     name: 'Greta',
+//     // address: 'Earth',
+//     occupation: 'Hero'
+// };
 
-function fromEarth(somebody){
-    if (somebody.address === ''){
-        return 'Earth'
-    }
+// function fromEarth(somebody){
+//     const modifiedSomebody = {
+//         ...somebody,
+//         address: 'Earth'
+//     }
+//     if (somebody.address){
+//         return somebody
+//     } else {
+//         return modifiedSomebody
+//     }
     // somebody.address = 'Earth'
-    return somebody;
     // add an address property whose value is Earth, then return that object
-};
-console.log(greet(fromEarth(person)));
+// };
+// console.log(greet(fromEarth(person)));
+
+const persons = [
+    {name: 'Alice', address: 'Atlanta'},
+    {name: 'Bob', address: 'Atlanta'},
+    {name: 'Chulu', address: 'Pacific'},
+];
+
+const modifiedPersons = [
+    'Darla',
+    ...persons
+];
+
+function addressIsNotPacific(persons){
+    return persons.address !== "Pacific";
+}
+
+// const noPacifics = persons.filter((persons)=>{
+//     return persons.address !== "Pacific";
+// });
+
+// short version of ^
+const noPacifics = persons.filter(persons => persons.address !== "Pacific");
+console.log(persons.filter(persons => persons.address !== "Pacific").map(greet()));
+
+
+
+
+// console.log(persons.map(greet()));
+// console.log(modifiedPersons);
+
 
 // import React from 'react';
 // import ReactDOM from 'react-dom';
